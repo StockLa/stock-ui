@@ -7,10 +7,10 @@
       >
         <v-toolbar-title>Stock UI</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn to="stock-stream">
+        <v-btn plain to="stock-stream">
           Stream Stock
         </v-btn>
-        <v-btn to="stock">
+        <v-btn plain to="stock">
           Get Stock
         </v-btn>
     </v-app-bar>

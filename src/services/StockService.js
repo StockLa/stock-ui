@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs';
+import stockBuilder from '@/builders/StockBuilder';
 
 class StockService {
   constructor(hostUrl) {
@@ -16,7 +17,7 @@ class StockService {
       const source = new EventSource(url.toString());
 
       source.onmessage = ({ data }) => {
-        const stocksData = JSON.parse(data);
+        const stocksData = stockBuilder.buildFromEvent(JSON.parse(data));
         console.log(stocksData);
         observer.next(stocksData);
       };
@@ -39,7 +40,7 @@ class StockService {
       const source = new EventSource(url.toString());
 
       source.onmessage = ({ data }) => {
-        const stocksData = JSON.parse(data);
+        const stocksData = stockBuilder.buildFromEvent(JSON.parse(data));
         observer.next(stocksData[0]);
       };
 
