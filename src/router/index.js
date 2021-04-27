@@ -15,6 +15,11 @@ const routes = [
     name: 'stock',
     component: () => import(/* webpackChunkName: "stock" */ '../views/Stock.vue'),
   },
+  {
+    path: '/watch-delta',
+    name: 'watch-delta',
+    component: () => import(/* webpackChunkName: "stock-delta" */ '../views/StockDelta.vue'),
+  },
 ];
 
 const router = new VueRouter({

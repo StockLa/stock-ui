@@ -13,8 +13,10 @@
         <v-btn plain to="stock">
           Get Stock
         </v-btn>
+        <v-btn plain to="watch-delta">
+          Watch Delta
+        </v-btn>
     </v-app-bar>
-
     <v-main>
       <router-view />
     </v-main>
