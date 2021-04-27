@@ -2,8 +2,9 @@ import { Observable } from 'rxjs';
 import stockBuilder from '@/builders/StockBuilder';
 
 class StockService {
-  constructor(hostUrl) {
-    this.hostUrl = hostUrl;
+  constructor(hostInformation) {
+    const { hostname, port } = hostInformation;
+    this.hostUrl = `http://${hostname}:${port}/`;
     this.stockPath = '/api/v1/stocks/';
   }
 
@@ -81,4 +82,4 @@ class StockService {
   }
 }
 
-export default new StockService('http://localhost.staging-achilles.systems:8080');
+export default new StockService(window.location);
